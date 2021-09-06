@@ -1,4 +1,4 @@
-package main
+package math
 
 import (
 	"fmt"
@@ -13,6 +13,7 @@ func init() {
 }
 
 // sieve returns the first n primes.
+// Uses the sieve of Eratosthenes.
 func sieve(n int) []int64 {
 	primes := make([]int64, 0, n)
 	primes = append(primes, 2)
@@ -50,10 +51,12 @@ func markMultiples(isComposite []bool, p int64) {
 	}
 }
 
+// indexOf returns the index within isComposite for a potential prime number.
 func indexOf(p int64) int {
 	return int((p-1)/2 - 1)
 }
 
+// primeOf returns the prime number for the given index within isComposite.
 func primeOf(i int) int64 {
 	return int64(2*(i+1) + 1)
 }
