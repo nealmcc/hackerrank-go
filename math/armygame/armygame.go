@@ -1,4 +1,4 @@
-package math
+package armygame
 
 /*
  * Complete the 'gameWithCells' function below.

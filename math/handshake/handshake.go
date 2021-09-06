@@ -1,4 +1,4 @@
-package math
+package handshake
 
 // handshake calculates the number of distinct pairs of people there are in
 // a group of n people.  (n choose 2).

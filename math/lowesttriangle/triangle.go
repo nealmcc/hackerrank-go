@@ -1,4 +1,4 @@
-package math
+package lowesttriangle
 
 /*
  * Complete the 'lowestTriangle' function below.

@@ -1,4 +1,4 @@
-package math
+package findpoint
 
 /*
  * Complete the 'findPoint' function below.
