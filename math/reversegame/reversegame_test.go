@@ -58,37 +58,3 @@ func TestSolve(t *testing.T) {
 		})
 	}
 }
-
-func TestSequence(t *testing.T) {
-	tt := []struct {
-		name string
-		in   int
-		want []int
-	}{
-		{"size 1", 1, seqSlow(1)},
-		{"size 2", 2, seqSlow(2)},
-		{"size 3", 3, seqSlow(3)},
-		{"size 4", 4, seqSlow(4)},
-		{"size 5", 5, seqSlow(5)},
-		{"size 6", 6, seqSlow(6)},
-		{"size 7", 7, seqSlow(7)},
-	}
-
-	for _, tc := range tt {
-		tc := tc
-		t.Run(tc.name, func(t *testing.T) {
-			t.Parallel()
-			got := sequence(tc.in)
-			if len(got) != len(tc.want) {
-				t.Fatalf("sequence(%d) = length %d ; want %d",
-					tc.in, len(got), len(tc.want))
-			}
-
-			for i, want := range tc.want {
-				if got[i] != want {
-					t.Fatalf("\n\t\tsequence(%d) = %v\n\t\t\t want %v", tc.in, got, tc.want)
-				}
-			}
-		})
-	}
-}

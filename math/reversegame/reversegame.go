@@ -12,48 +12,17 @@
 // numbered K. Akash will win the game, if he can answer. Help Akash.
 package reversegame
 
-func solve(size, needle int) int {
-	seq := sequence(size)
-	return indexOf(seq, needle)
-}
-
-func sequence(n int) []int {
-	seq := make([]int, n)
-
+func solve(n, k int) int {
 	for i := 0; i < n; i++ {
 		if i%2 == 0 {
-			seq[i] = n - 1 - (i / 2)
+			if k == n-(i/2)-1 {
+				return i
+			}
 		} else {
-			seq[i] = i / 2
-		}
-	}
-
-	return seq
-}
-
-func indexOf(haystack []int, needle int) int {
-	for i, n := range haystack {
-		if n == needle {
-			return i
+			if k == i/2 {
+				return i
+			}
 		}
 	}
 	return -1
-}
-
-func seqSlow(n int) []int {
-	seq := make([]int, n)
-	for i := 0; i < n; i++ {
-		seq[i] = i
-	}
-
-	for i := 0; i < n; i++ {
-		reverse(seq[i:])
-	}
-	return seq
-}
-
-func reverse(ints []int) {
-	for i, j := 0, len(ints)-1; i < j; i, j = i+1, j-1 {
-		ints[i], ints[j] = ints[j], ints[i]
-	}
 }
