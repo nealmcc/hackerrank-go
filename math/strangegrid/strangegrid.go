@@ -30,6 +30,16 @@
 // Output the answer in a single line.
 package strangegrid
 
+// solve the strange grid problem.
 func solve(r, c int) int {
-	return 0
+	row := func() int {
+		r -= 1
+		return r%2 + (r/2)*10
+	}
+
+	col := func() int {
+		return (c - 1) * 2
+	}
+
+	return row() + col()
 }
